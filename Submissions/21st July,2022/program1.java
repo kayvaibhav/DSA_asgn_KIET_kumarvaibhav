@@ -1,37 +1,46 @@
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ * int val;
+ * ListNode next;
+ * ListNode() {}
+ * ListNode(int val) { this.val = val; }
+ * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
 class Solution {
-    // https://leetcode.com/problems/number-of-matching-subsequences/submissions/
-    // 792. Number of Matching Subsequences
-    public int numMatchingSubseq(String s, String[] words) {
+    // 92. Reverse Linked List II
+    // https://leetcode.com/problems/reverse-linked-list-ii/
+    public ListNode reverseBetween(ListNode head, int left, int right) {
+        ListNode prevNode = null, currNode = null, nextNode = head,
+                startNode = null, startRevNode = null;
 
-        Map<String, Integer> map = new HashMap<>();
-        for (String str : words) {
-            map.put(str, map.getOrDefault(str, 0) + 1);
+        int count = 1;
+
+        while (count < left && nextNode != null) {
+            if (count == left - 1)
+                startNode = nextNode;
+            nextNode = nextNode.next;
+            count++;
         }
 
-        int ans = 0;
-        char ch[] = s.toCharArray();
+        startRevNode = nextNode;
 
-        for (String str : map.keySet()) {
-
-            char temp[] = str.toCharArray();
-            int i = 0;
-            int j = 0;
-
-            while (i < ch.length && j < temp.length) {
-                if (ch[i] == temp[j]) {
-                    i++;
-                    j++;
-                } else {
-                    i++;
-                }
-            }
-
-            if (j == temp.length) {
-                ans += map.get(str);
-            }
-
+        while (count <= right && nextNode != null) {
+            currNode = nextNode;
+            nextNode = currNode.next;
+            currNode.next = prevNode;
+            prevNode = currNode;
+            count++;
         }
 
-        return ans;
+        if (startNode != null)
+            startNode.next = prevNode;
+        else
+            head = prevNode;
+
+        startRevNode.next = nextNode;
+
+        return head;
     }
 }
