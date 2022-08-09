@@ -29,3 +29,7 @@ Phase-2 : Online Self-Paced Preparation of DSA (5 Weeks, from 4th July to 6th Au
 | 24 | [27th July, 2022](/Submissions/27th%20July%2C%202022/) |
 | 25 | [28th July, 2022](/Submissions/28th%20July%2C%202022/) |
 | 26 | [29th July, 2022](/Submissions/29th%20July%2C%202022/) |
+| 27 | [30th July, 2022](/Submissions/30th%20July%2C%202022/) |
+| 28 | [31st July, 2022](/Submissions/31st%20July%2C%202022/) |
+| 29 | [1st August, 2022](/Submissions/1st%20August%2C%202022/) |
+| 30 | [2nd August, 2022](/Submissions/2nd%20August%2C%202022/) |
